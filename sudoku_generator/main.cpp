@@ -31,15 +31,15 @@ void func(short field[9][9], int y, int x, long long &count) {
 }
         
 bool check(int a, short field[9][9], int y, int x) {
-    
-    for (int i = 0; i < x; ++i) {
+    int x1 = x - x % 3, y1 = y - y % 3;
+    for (int i = 0; i < x1; ++i) {
         if (a == field[y][i]) return 0;
     }
     
-    for (int i = 0; i < y; ++i) {
+    for (int i = 0; i < y1; ++i) {
         if (a == field[i][x]) return 0;
     }
-    int x1 = x - x % 3, y1 = y - y % 3;
+
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
             if (x == j + x1 and y == i + y1) break;
